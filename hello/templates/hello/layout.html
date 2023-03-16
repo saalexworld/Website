@@ -1,0 +1,33 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title_base %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'hello/css/main.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+</head>
+<body>
+    <aside>
+        <img src="{% static 'hello/img/logo.jpg' %}" alt="Лого">
+        <span class="logo"></span>
+        <h3>Navigation</h3>
+        <ul>
+            <a href="{% url 'home' %}"><li><i class="fas fa-home"></i> Main</li></a>
+            <a href="{% url 'about' %}"><li><i class="fas fa-torah"></i> About</li></a>
+            <a href=""><li><i class="fas fa-piggy-bank"></i> Contact me</li></a>
+            <a href="{% url 'news_home' %}"><li><i class="fab fa-neos"></i> News</li></a>
+            <a href="{% url 'create' %}"><li><button class="btn btn-info"><i class="fas fa-plus-circle"> Add note</i></button></li></a>
+            {# Leftside menu #}
+        </ul>
+    </aside>
+    <main>
+    {% block base %}
+    {% endblock %}
+    </main>
+</body>
+</html>

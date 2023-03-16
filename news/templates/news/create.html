@@ -1,0 +1,18 @@
+{% extends 'hello/layout.html' %}
+
+{% block title_base %} New note{% endblock %}
+
+{% block base %}
+<div class="features">
+    <h1>Note editing</h1>
+    <form method="post">
+        {% csrf_token %}<br>
+        {{ form.title }}<br>
+        {{ form.intro }}<br>
+        {{ form.text_content }}<br>
+        {{ form.date }}<br>
+        <span>{{ error }}</span>
+        <button class="btn btn-success" type="submit"> Save note</button>
+    </form>
+</div>
+{% endblock %}
